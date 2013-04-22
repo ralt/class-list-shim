@@ -1,29 +1,33 @@
 {
-  "name": "class-list",
-  "version": "0.0.1",
-  "description": "A cross browser class list",
+  "name": "class-list-shim",
+  "version": "0.1.0",
+  "description": "Fork of Raynos/class-list compatible with IE8",
   "keywords": [],
-  "author": "Raynos <raynos2@gmail.com>",
-  "repository": "git://github.com/Raynos/class-list.git",
+  "author": "Florian Margaine <florian@margaine.com>",
+  "repository": "git://github.com/Ralt/class-list-shim.git",
   "main": "index",
-  "homepage": "https://github.com/Raynos/class-list",
+  "homepage": "https://github.com/Ralt/class-list-shim",
   "contributors": [
     {
-      "name": "Jake Verbaten"
+      "name": "Jake Verbaten",
+      "name": "Florian Margaine"
     }
   ],
   "bugs": {
-    "url": "https://github.com/Raynos/class-list/issues",
-    "email": "raynos2@gmail.com"
+    "url": "https://github.com/Ralt/class-list-shim/issues",
+    "email": "florian@margaine.com"
   },
-  "dependencies": {},
+  "dependencies": {
+      "iter-shims": "0.1.x",
+      "indexof-shim": "0.1.x"
+  },
   "devDependencies": {
     "browserify-server": "~1.2.2"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "http://github.com/Raynos/class-list/raw/master/LICENSE"
+      "url": "http://github.com/Ralt/class-list-shim/raw/master/LICENSE"
     }
   ],
   "scripts": {}

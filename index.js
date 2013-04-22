@@ -2,6 +2,9 @@
 
 module.exports = ClassList
 
+var filter = require('iter-shims/filter'),
+    indexOf = require('indexof-shim')
+
 function ClassList(elem) {
     var cl = elem.classList
 
@@ -23,7 +26,7 @@ function ClassList(elem) {
 
     function add(token) {
         var list = getTokens()
-        if (list.indexOf(token) > -1) {
+        if (indexOf(list, token) > -1) {
             return
         }
         list.push(token)
@@ -32,7 +35,7 @@ function ClassList(elem) {
 
     function remove(token) {
         var list = getTokens()
-            , index = list.indexOf(token)
+            , index = indexOf(list, token)
 
         if (index === -1) {
             return
@@ -43,7 +46,7 @@ function ClassList(elem) {
     }
 
     function contains(token) {
-        return getTokens().indexOf(token) > -1
+        return indexOf(getTokens(), token) > -1
     }
 
     function toggle(token) {
@@ -68,7 +71,7 @@ function ClassList(elem) {
     function getTokens() {
         var className = elem.className
 
-        return className.split(" ").filter(isTruthy)
+        return filter(className.split(" "), Boolean)
     }
 
     function setTokens(list) {
@@ -83,8 +86,4 @@ function ClassList(elem) {
 
         delete list[length]
     }
-}
-
-function isTruthy(value) {
-    return !!value
 }
